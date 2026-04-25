@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In – ZZMTRADING</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-top">
+      <a href="index.html" class="logo">ZZM<span>TRADING</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products, brands, parts..." />
+        <button class="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+      <div class="header-icons">
+        <a href="login.html" class="header-icon-link" style="color:#2563eb;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>Account</span>
+        </a>
+        <a href="login.html" class="header-icon-link">
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span class="cart-badge">3</span>
+          </div>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <div class="categories-wrapper">
+          <button class="categories-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            Categories
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="categories-dropdown">
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              Gaming PCs
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+              Laptops
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>
+              Components
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+              Accessories
+            </a>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="about.html" class="nav-link">About Us</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="login-page">
+
+      <!-- LEFT PANEL (desktop only) -->
+      <div class="login-left">
+        <div class="login-left-bg">
+          <img src="https://images.unsplash.com/photo-1642665358815-310df20dc8dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80" alt="Minimal Desk Setup" />
+          <div class="login-left-overlay"></div>
+        </div>
+        <div class="login-left-content">
+          <h2>Level up your rig today.</h2>
+          <p>Join the ZZMTRADING community to access exclusive deals, track your orders, and manage your service requests all in one place.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL – FORM -->
+      <div class="login-right">
+        <div class="login-box">
+
+          <!-- Tabs -->
+          <div class="login-tabs">
+            <button class="login-tab active" id="signinTab" onclick="switchTab('signin')">Sign In</button>
+            <button class="login-tab" id="registerTab" onclick="switchTab('register')">Register</button>
+          </div>
+
+          <!-- Heading -->
+          <div class="login-heading">
+            <h1 id="formTitle">Welcome back</h1>
+            <p id="formSubtitle">Enter your details to access your account.</p>
+          </div>
+
+          <!-- Form -->
+          <form id="authForm" onsubmit="handleSubmit(event)" class="form-fields">
+
+            <!-- Name (register only) -->
+            <div class="form-field field-hidden" id="nameField">
+              <label for="nameInput">Full Name</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                </div>
+                <input type="text" id="nameInput" name="name" placeholder="John Doe" class="form-input" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="emailInput">Email Address</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <input type="email" id="emailInput" name="email" placeholder="name@example.com" class="form-input" required />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-field">
+              <div class="field-label-row">
+                <label for="passwordInput">Password</label>
+                <a href="#" class="forgot-link" id="forgotLink">Forgot password?</a>
+              </div>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <input type="password" id="passwordInput" name="password" placeholder="••••••••" class="form-input pr-icon" required />
+                <button type="button" class="eye-toggle" onclick="togglePassword()" id="eyeBtn" aria-label="Toggle password">
+                  <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span id="submitLabel">Sign In</span>
+              <svg id="submitArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <div class="spinner" id="spinner" style="display:none;"></div>
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">ZZM<span>TRADING</span></div>
+          <p class="footer-desc">Your ultimate destination for premium gaming gear, performance components, and expert technical support.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">Gaming PCs</a></li>
+            <li><a href="products.html">Laptops</a></li>
+            <li><a href="products.html">Components</a></li>
+            <li><a href="products.html">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Repair Status</a></li>
+            <li><a href="#">Warranty Info</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p class="newsletter-text">Subscribe for the latest drops and deals.</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Email address" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var isSignIn = true;
+
+    function switchTab(mode) {
+      isSignIn = (mode === 'signin');
+
+      document.getElementById('signinTab').classList.toggle('active', isSignIn);
+      document.getElementById('registerTab').classList.toggle('active', !isSignIn);
+
+      document.getElementById('formTitle').textContent = isSignIn ? 'Welcome back' : 'Create an account';
+      document.getElementById('formSubtitle').textContent = isSignIn
+        ? 'Enter your details to access your account.'
+        : 'Fill in your information to get started.';
+
+      var nameField = document.getElementById('nameField');
+      nameField.classList.toggle('field-hidden', isSignIn);
+      document.getElementById('nameInput').required = !isSignIn;
+
+      document.getElementById('forgotLink').style.display = isSignIn ? '' : 'none';
+      document.getElementById('submitLabel').textContent = isSignIn ? 'Sign In' : 'Create Account';
+    }
+
+    function togglePassword() {
+      var input = document.getElementById('passwordInput');
+      var icon = document.getElementById('eyeIcon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+      } else {
+        input.type = 'password';
+        icon.innerHTML = '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>';
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submitBtn');
+      var label = document.getElementById('submitLabel');
+      var arrow = document.getElementById('submitArrow');
+      var spinner = document.getElementById('spinner');
+
+      btn.disabled = true;
+      label.style.display = 'none';
+      arrow.style.display = 'none';
+      spinner.style.display = '';
+
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>

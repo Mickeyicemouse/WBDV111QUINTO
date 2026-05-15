@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZZM Trading Admin — User Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-text">ZZM<span>TRADING</span></span>
+    <button class="admin-badge">Admin Panel</button>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">MAIN</div>
+    <a class="nav-item " href="admin-analytics.html">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Analytics
+    </a>
+    <a class="nav-item " href="admin-dashboard.html">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <div class="nav-section-label" style="margin-top:1.5rem">MANAGEMENT</div>
+    <a class="nav-item active" href="admin-users.html">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      User Management
+      <span class="nav-badge">24</span>
+    </a>
+    <a class="nav-item " href="admin-orders.html">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Order History
+      <span class="nav-badge">8</span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <a class="logout-link" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Log Out
+    </a>
+  </div>
+</aside>
+<div class="admin-main">
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="page-title">User Management</div>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-filters"><button class="btn-dark">+ Invite User</button></div>
+      <div class="admin-profile">
+        <div class="admin-avatar">AU</div>
+        <span class="admin-name">Admin User</span>
+      </div>
+    </div>
+  </header>
+  <div class="page-content">
+    <!-- Stats -->
+    <div class="mgmt-stats-grid">
+      <div class="mgmt-stat-card"><div class="mgmt-stat-label">Total Users</div><div class="mgmt-stat-val">8,204</div><div class="mgmt-stat-sub">All registered accounts</div></div>
+      <div class="mgmt-stat-card accent-purple"><div class="mgmt-stat-label">Active Today</div><div class="mgmt-stat-val">1,342</div><div class="mgmt-stat-sub">&#8593; 8% from yesterday</div></div>
+      <div class="mgmt-stat-card"><div class="mgmt-stat-label">New This Month</div><div class="mgmt-stat-val">847</div><div class="mgmt-stat-sub">&#8593; 9.7% growth</div></div>
+    </div>
+
+    <!-- Search + Filters -->
+    <div class="search-filter-bar">
+      <div class="search-input-wrap">
+        <svg class="search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" class="search-input" placeholder="Search users by name, email...">
+      </div>
+      <input type="radio" name="status-pill" id="pill-0" class="pill-radio" checked>
+      <input type="radio" name="status-pill" id="pill-1" class="pill-radio">
+      <input type="radio" name="status-pill" id="pill-2" class="pill-radio">
+      <input type="radio" name="status-pill" id="pill-3" class="pill-radio">
+      <div class="filter-pills">
+        <label class="pill active" for="pill-0">All</label>
+        <label class="pill" for="pill-1">Active</label>
+        <label class="pill" for="pill-2">Inactive</label>
+        <label class="pill" for="pill-3">Flagged</label>
+        </div>
+      <button class="btn-ghost-sm">Filter</button>
+      <button class="btn-ghost-sm">Export</button>
+      <button class="btn-dark-sm">+ Add User</button>
+    </div>
+
+    <!-- Users Table -->
+    <div class="table-card">
+      <div class="table-wrapper">
+        <table class="admin-table">
+          <thead><tr><th style="width:2rem"><input type="checkbox"></th><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Orders</th><th>Joined</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#c4b5fd,#7c3aed)">JD</div><span>Juan Dela Cruz</span></div></td>
+              <td class="text-muted">juan@email.com</td>
+              <td><span class="role-badge role-customer">Customer</span></td>
+              <td><span class="status-badge status-delivered">Active</span></td>
+              <td>24</td><td class="text-muted">Jan 12, 2024</td>
+              <td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#a7f3d0,#10b981)">MS</div><span>Maria Santos</span></div></td>
+              <td class="text-muted">maria@email.com</td>
+              <td><span class="role-badge role-customer">Customer</span></td>
+              <td><span class="status-badge status-delivered">Active</span></td>
+              <td>11</td><td class="text-muted">Feb 3, 2024</td>
+              <td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#fde68a,#f59e0b)">CR</div><span>Carlo Reyes</span></div></td>
+              <td class="text-muted">carlo@email.com</td>
+              <td><span class="role-badge role-seller">Seller</span></td>
+              <td><span class="status-badge status-pending">Inactive</span></td>
+              <td>5</td><td class="text-muted">Mar 18, 2024</td>
+              <td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Delete</button></div></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#fca5a5,#f43f5e)">AG</div><span>Ana Gonzales</span></div></td>
+              <td class="text-muted">ana@email.com</td>
+              <td><span class="role-badge role-admin">Admin</span></td>
+              <td><span class="status-badge status-delivered">Active</span></td>
+              <td>37</td><td class="text-muted">Nov 5, 2023</td>
+              <td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Delete</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span class="table-count">Showing 4 of 8,204 users</span>
+        <div class="pagination-sm"><button class="pag-btn">&#8249;</button><button class="pag-btn active">1</button><button class="pag-btn">2</button><button class="pag-btn dark">&#8594;</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Admin – SA Dashboard – ZZMTRADING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  
+    .pill-radio { display: none; }
+    .pill { cursor: pointer; }
+    .pill-radio:nth-of-type(1):checked ~ .filter-pills .pill:nth-child(1),
+    .pill-radio:nth-of-type(2):checked ~ .filter-pills .pill:nth-child(2),
+    .pill-radio:nth-of-type(3):checked ~ .filter-pills .pill:nth-child(3),
+    .pill-radio:nth-of-type(4):checked ~ .filter-pills .pill:nth-child(4),
+    .pill-radio:nth-of-type(5):checked ~ .filter-pills .pill:nth-child(5) {
+      background: #ede9fe; border-color: #7c3aed; color: #6d28d9; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-wordmark">ZZM<span>TRADING</span></span>
+      <span class="super-badge">&#11088; Super Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="nav-item" href="sa-analytics.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        SA Analytics
+      </a>
+      <a class="nav-item active" href="sa-dashboard.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        SA Dashboard
+      </a>
+      <div class="nav-section-label">Management</div>
+      <a class="nav-item" href="sa-accounts.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        Account Mgmt<span class="nav-badge">12</span>
+      </a>
+      <a class="nav-item" href="sa-sales.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4"/><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+        Sales Mgmt<span class="nav-badge">5</span>
+      </a>
+      
+    </nav>
+    <div class="sidebar-footer">
+      <a class="logout-link" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log Out
+      </a>
+    </div>
+  </aside>
+  <div class="admin-main">
+    <div class="topbar">
+      <div class="page-title">SA Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-filters">
+          <button class="btn-dark">Refresh</button>
+        </div>
+        <button class="btn-dark">Export</button>
+        <div class="admin-profile">
+          <div class="admin-avatar">SA</div>
+          <span class="admin-name">Super Admin</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+
+        <div class="dash-kpi-grid">
+          <div class="dash-kpi-card"><span class="dash-kpi-badge badge-green">+14%</span><div class="dash-kpi-swatch" style="background:#7c3aed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="dash-kpi-label">Gross Revenue</div><div class="dash-kpi-val">&#8369;4.82M</div><div class="dash-kpi-sub">vs &#8369;4.22M last month</div></div>
+          <div class="dash-kpi-card"><span class="dash-kpi-badge badge-green">+8%</span><div class="dash-kpi-swatch" style="background:#0d9488"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div><div class="dash-kpi-label">Total Orders</div><div class="dash-kpi-val">3,241</div><div class="dash-kpi-sub">vs 2,999 last month</div></div>
+          <div class="dash-kpi-card"><span class="dash-kpi-badge badge-amber">+2%</span><div class="dash-kpi-swatch" style="background:#d97706"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div><div class="dash-kpi-label">New Users</div><div class="dash-kpi-val">1,892</div><div class="dash-kpi-sub">vs 1,854 last month</div></div>
+          <div class="dash-kpi-card"><span class="dash-kpi-badge badge-red">-3%</span><div class="dash-kpi-swatch" style="background:#dc2626"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="dash-kpi-label">Avg Order Value</div><div class="dash-kpi-val">&#8369;1,487</div><div class="dash-kpi-sub">vs &#8369;1,534 last month</div></div>
+        </div>
+
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Orders by Month</div>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#bfdbfe"></span>Components</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#b5a14e"></span>Gaming PCs</div>
+              </div>
+            </div>
+            <div class="bar-chart-area">
+              <div class="bar-chart-bars">
+                <div class="bar-col"><div class="bar-bar" style="height:38%;background:#bfdbfe"></div><div class="bar-bar" style="height:52%;background:#b5a14e"></div><span>Jan</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:28%;background:#bfdbfe"></div><div class="bar-bar" style="height:60%;background:#b5a14e"></div><span>Feb</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:55%;background:#bfdbfe"></div><div class="bar-bar" style="height:70%;background:#b5a14e"></div><span>Mar</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:32%;background:#bfdbfe"></div><div class="bar-bar" style="height:45%;background:#b5a14e"></div><span>Apr</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:65%;background:#bfdbfe"></div><div class="bar-bar" style="height:78%;background:#b5a14e"></div><span>May</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:42%;background:#bfdbfe"></div><div class="bar-bar" style="height:55%;background:#b5a14e"></div><span>Jun</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:50%;background:#bfdbfe"></div><div class="bar-bar" style="height:65%;background:#b5a14e"></div><span>Jul</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header"><div class="chart-title">Order Status Split</div></div>
+            <div class="donut-area" style="flex-direction:column;align-items:center;gap:1rem">
+              <svg width="110" height="110" viewBox="0 0 110 110">
+                <circle cx="55" cy="55" r="42" fill="none" stroke="#f1f5f9" stroke-width="16"/>
+                <circle cx="55" cy="55" r="42" fill="none" stroke="#b5a14e" stroke-width="16" stroke-dasharray="105 159" stroke-dashoffset="0" transform="rotate(-90 55 55)"/>
+                <circle cx="55" cy="55" r="42" fill="none" stroke="#dbeafe" stroke-width="16" stroke-dasharray="66 198" stroke-dashoffset="-105" transform="rotate(-90 55 55)"/>
+                <circle cx="55" cy="55" r="42" fill="none" stroke="#e2e8f0" stroke-width="16" stroke-dasharray="93 171" stroke-dashoffset="-171" transform="rotate(-90 55 55)"/>
+                <text x="55" y="59" text-anchor="middle" font-size="11" font-weight="800" fill="#0f172a">3,241</text>
+              </svg>
+              <div class="donut-legend" style="width:100%">
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#b5a14e;width:10px;height:10px"></span>Delivered<span class="donut-leg-val">40%</span></div>
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#bfdbfe;width:10px;height:10px"></span>Processing<span class="donut-leg-val">25%</span></div>
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#e2e8f0;width:10px;height:10px"></span>Pending<span class="donut-leg-val">35%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-card-header"><div class="table-card-title">Recent Orders</div><button class="btn-outline-sm">View All</button></div>
+          <div class="table-wrapper">
+            <table class="admin-table">
+              <thead><tr><th><input type="checkbox"></th><th>Order ID</th><th>Customer</th><th>Product</th><th>Date</th><th>Payment</th><th>Status</th><th>Total</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td><input type="checkbox"></td><td><strong>#ORD-8821</strong></td><td>Juan Dela Cruz</td><td>RTX 4080 Gaming PC</td><td style="color:#64748b">May 4, 2026</td><td><span class="pay-badge pay-gcash">GCash</span></td><td><span class="status-badge status-delivered">Delivered</span></td><td><strong>&#8369;2,499</strong></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Del</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><strong>#ORD-8820</strong></td><td>Maria Santos</td><td>StealthBook Pro 16&quot;</td><td style="color:#64748b">May 3, 2026</td><td><span class="pay-badge pay-card">Card</span></td><td><span class="status-badge status-processing">Processing</span></td><td><strong>&#8369;3,299</strong></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Del</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><strong>#ORD-8819</strong></td><td>Pedro Reyes</td><td>ProGamer Keyboard RGB</td><td style="color:#64748b">May 3, 2026</td><td><span class="pay-badge pay-cod">COD</span></td><td><span class="status-badge status-pending">Pending</span></td><td><strong>&#8369;129</strong></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Del</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><strong>#ORD-8818</strong></td><td>Ana Garcia</td><td>RTX 4070 Ti 12GB</td><td style="color:#64748b">May 2, 2026</td><td><span class="pay-badge pay-gcash">GCash</span></td><td><span class="status-badge status-delivered">Delivered</span></td><td><strong>&#8369;799</strong></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Del</button></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <div class="table-count">Showing 4 of 3,241 orders</div>
+            <div class="pagination-sm"><button class="pag-btn">&#8249;</button><button class="pag-btn active">1</button><button class="pag-btn">2</button><button class="pag-btn">3</button><button class="pag-btn dark">&#8250;</button></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

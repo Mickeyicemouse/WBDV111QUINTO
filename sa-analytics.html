@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Admin – SA Analytics – ZZMTRADING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pill-radio { display: none; }
+    .pill { cursor: pointer; }
+    .pill-radio:nth-of-type(1):checked ~ .filter-pills .pill:nth-child(1),
+    .pill-radio:nth-of-type(2):checked ~ .filter-pills .pill:nth-child(2),
+    .pill-radio:nth-of-type(3):checked ~ .filter-pills .pill:nth-child(3),
+    .pill-radio:nth-of-type(4):checked ~ .filter-pills .pill:nth-child(4),
+    .pill-radio:nth-of-type(5):checked ~ .filter-pills .pill:nth-child(5) {
+      background: #ede9fe; border-color: #7c3aed; color: #6d28d9; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-wordmark">ZZM<span>TRADING</span></span>
+      <span class="super-badge">&#11088; Super Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="nav-item active" href="sa-analytics.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        SA Analytics
+      </a>
+      <a class="nav-item" href="sa-dashboard.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        SA Dashboard
+      </a>
+      <div class="nav-section-label">Management</div>
+      <a class="nav-item" href="sa-accounts.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        Account Mgmt<span class="nav-badge">12</span>
+      </a>
+      <a class="nav-item" href="sa-sales.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4"/><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+        Sales Mgmt<span class="nav-badge">5</span>
+      </a>
+      
+    </nav>
+    <div class="sidebar-footer">
+      <a class="logout-link" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log Out
+      </a>
+    </div>
+  </aside>
+  <div class="admin-main">
+    <div class="topbar">
+      <div class="page-title">SA Analytics</div>
+      <div class="topbar-right">
+        <div class="topbar-filters">
+          <select class="filter-select">
+            <option>Last 30 days</option>
+            <option>Last 7 days</option>
+            <option>Last 90 days</option>
+            <option>This year</option>
+          </select>
+          <select class="filter-select">
+            <option>All Regions</option>
+            <option>Luzon</option>
+            <option>Visayas</option>
+            <option>Mindanao</option>
+          </select>
+        </div>
+        <button class="btn-dark">Export</button>
+        <div class="admin-profile">
+          <div class="admin-avatar">SA</div>
+          <span class="admin-name">Super Admin</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card c1">
+            <div class="kpi-label">Total Revenue</div>
+            <div class="kpi-value">&#8369;4.82M</div>
+            <div class="kpi-trend up"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+12.4% vs last month</div>
+            <div class="kpi-sparkline"><svg viewBox="0 0 120 32" preserveAspectRatio="none"><polyline points="0,28 20,22 40,18 60,24 80,12 100,8 120,4" fill="none" stroke="#7c3aed" stroke-width="2"/><polyline points="0,28 20,22 40,18 60,24 80,12 100,8 120,4 120,32 0,32" fill="rgba(124,58,237,0.1)" stroke="none"/></svg></div>
+          </div>
+          <div class="kpi-card c2">
+            <div class="kpi-label">Total Orders</div>
+            <div class="kpi-value">3,241</div>
+            <div class="kpi-trend up"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+8.1% vs last month</div>
+            <div class="kpi-sparkline"><svg viewBox="0 0 120 32" preserveAspectRatio="none"><polyline points="0,24 20,28 40,20 60,16 80,18 100,10 120,6" fill="none" stroke="#0d9488" stroke-width="2"/><polyline points="0,24 20,28 40,20 60,16 80,18 100,10 120,6 120,32 0,32" fill="rgba(13,148,136,0.1)" stroke="none"/></svg></div>
+          </div>
+          <div class="kpi-card c3">
+            <div class="kpi-label">Active Users</div>
+            <div class="kpi-value">18,554</div>
+            <div class="kpi-trend up"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+5.3% vs last month</div>
+            <div class="kpi-sparkline"><svg viewBox="0 0 120 32" preserveAspectRatio="none"><polyline points="0,20 20,18 40,22 60,14 80,16 100,10 120,8" fill="none" stroke="#d97706" stroke-width="2"/><polyline points="0,20 20,18 40,22 60,14 80,16 100,10 120,8 120,32 0,32" fill="rgba(217,119,6,0.1)" stroke="none"/></svg></div>
+          </div>
+          <div class="kpi-card c4">
+            <div class="kpi-label">Refund Rate</div>
+            <div class="kpi-value">2.4%</div>
+            <div class="kpi-trend down"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>+0.3% vs last month</div>
+            <div class="kpi-sparkline"><svg viewBox="0 0 120 32" preserveAspectRatio="none"><polyline points="0,10 20,14 40,12 60,18 80,16 100,22 120,24" fill="none" stroke="#dc2626" stroke-width="2"/><polyline points="0,10 20,14 40,12 60,18 80,16 100,22 120,24 120,32 0,32" fill="rgba(220,38,38,0.1)" stroke="none"/></svg></div>
+          </div>
+        </div>
+
+        <!-- Line chart + Donut -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Revenue &amp; Orders Over Time</div>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>Revenue</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#0d9488"></span>Orders</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#93c5fd;border:1px dashed #3b82f6"></span>Target</div>
+              </div>
+            </div>
+            <div class="line-chart-area">
+              <svg viewBox="0 0 480 160" preserveAspectRatio="none" width="100%" height="100%">
+                <line x1="0" y1="40" x2="480" y2="40" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="0" y1="80" x2="480" y2="80" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="0" y1="120" x2="480" y2="120" stroke="#f1f5f9" stroke-width="1"/>
+                <polyline points="0,90 80,88 160,85 240,82 320,80 400,78 480,75" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <polyline points="0,130 80,120 160,110 240,115 320,95 400,85 480,80" fill="none" stroke="#0d9488" stroke-width="2"/>
+                <polyline points="0,130 80,120 160,110 240,115 320,95 400,85 480,80 480,155 0,155" fill="rgba(13,148,136,0.07)" stroke="none"/>
+                <polyline points="0,120 80,105 160,95 240,100 320,75 400,55 480,40" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+                <polyline points="0,120 80,105 160,95 240,100 320,75 400,55 480,40 480,155 0,155" fill="rgba(124,58,237,0.08)" stroke="none"/>
+                <circle cx="0" cy="120" r="3" fill="#7c3aed"/><circle cx="80" cy="105" r="3" fill="#7c3aed"/>
+                <circle cx="160" cy="95" r="3" fill="#7c3aed"/><circle cx="240" cy="100" r="3" fill="#7c3aed"/>
+                <circle cx="320" cy="75" r="3" fill="#7c3aed"/><circle cx="400" cy="55" r="3" fill="#7c3aed"/>
+                <circle cx="480" cy="40" r="3" fill="#7c3aed"/>
+              </svg>
+            </div>
+            <div class="chart-xlabels"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header"><div class="chart-title">Revenue by Category</div></div>
+            <div class="donut-area">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#f1f5f9" stroke-width="14"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#7c3aed" stroke-width="14" stroke-dasharray="96 143" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#0d9488" stroke-width="14" stroke-dasharray="57 182" stroke-dashoffset="-96" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#d97706" stroke-width="14" stroke-dasharray="36 203" stroke-dashoffset="-153" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#dc2626" stroke-width="14" stroke-dasharray="50 189" stroke-dashoffset="-189" transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="donut-legend">
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#7c3aed"></span>Gaming PCs<span class="donut-leg-val">40%</span></div>
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#0d9488"></span>Laptops<span class="donut-leg-val">24%</span></div>
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#d97706"></span>Components<span class="donut-leg-val">15%</span></div>
+                <div class="donut-leg-item"><span class="legend-dot" style="background:#dc2626"></span>Accessories<span class="donut-leg-val">21%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar Charts row -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Monthly Orders by Type</div>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#bfdbfe"></span>Components</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#b5a14e"></span>Gaming PCs</div>
+              </div>
+            </div>
+            <div class="bar-chart-area">
+              <div class="bar-chart-bars">
+                <div class="bar-col"><div class="bar-bar" style="height:40%;background:#bfdbfe"></div><div class="bar-bar" style="height:55%;background:#b5a14e"></div><span>Jan</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:30%;background:#bfdbfe"></div><div class="bar-bar" style="height:63%;background:#b5a14e"></div><span>Feb</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:50%;background:#bfdbfe"></div><div class="bar-bar" style="height:65%;background:#b5a14e"></div><span>Mar</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:35%;background:#a78bfa"></div><div class="bar-bar" style="height:48%;background:#b5a14e"></div><span>Apr</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:60%;background:#a78bfa"></div><div class="bar-bar" style="height:72%;background:#b5a14e"></div><span>May</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:45%;background:#c4b5fd"></div><div class="bar-bar" style="height:58%;background:#b5a14e"></div><span>Jun</span></div>
+                <div class="bar-col"><div class="bar-bar" style="height:38%;background:#c4b5fd"></div><div class="bar-bar" style="height:50%;background:#b5a14e"></div><span>Jul</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header"><div class="chart-title">Top Sellers by Revenue</div></div>
+            <div class="bar-list">
+              <div class="bar-list-item"><div class="bar-list-label">Gaming PCs</div><div class="bar-list-track"><div class="bar-list-fill" style="width:82%;background:#7c3aed"></div></div><div class="bar-list-pct">82%</div></div>
+              <div class="bar-list-item"><div class="bar-list-label">Laptops</div><div class="bar-list-track"><div class="bar-list-fill" style="width:65%;background:#0d9488"></div></div><div class="bar-list-pct">65%</div></div>
+              <div class="bar-list-item"><div class="bar-list-label">Components</div><div class="bar-list-track"><div class="bar-list-fill" style="width:48%;background:#d97706"></div></div><div class="bar-list-pct">48%</div></div>
+              <div class="bar-list-item"><div class="bar-list-label">Accessories</div><div class="bar-list-track"><div class="bar-list-fill" style="width:37%;background:#64748b"></div></div><div class="bar-list-pct">37%</div></div>
+              <div class="bar-list-item"><div class="bar-list-label">Monitors</div><div class="bar-list-track"><div class="bar-list-fill" style="width:22%;background:#f59e0b"></div></div><div class="bar-list-pct">22%</div></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

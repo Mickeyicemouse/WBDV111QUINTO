@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In – ZZMTRADING</title>
+  <link rel="stylesheet" href="style.css" />
+
+<style>
+
+  #view-toggle-chk { display: none; }
+
+  #view-toggle-chk ~ .topbar .view-toggle label[for="view-toggle-chk"].grid-lbl { background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.05); color:#2563eb; }
+  #view-toggle-chk ~ .topbar .view-toggle label[for="view-toggle-chk"].list-lbl { color:#64748b; }
+
+  #view-toggle-chk:checked ~ .topbar .view-toggle label[for="view-toggle-chk"].grid-lbl { background:none; box-shadow:none; color:#64748b; }
+  #view-toggle-chk:checked ~ .topbar .view-toggle label[for="view-toggle-chk"].list-lbl { background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.05); color:#2563eb; }
+
+  #view-toggle-chk ~ .products-grid { display: grid; grid-template-columns: repeat(2,1fr); gap:1.5rem; }
+  @media(min-width:1024px){ #view-toggle-chk ~ .products-grid { grid-template-columns: repeat(3,1fr); } }
+
+  #view-toggle-chk:checked ~ .products-grid { grid-template-columns: 1fr; }
+  #view-toggle-chk:checked ~ .products-grid .product-card { flex-direction: row; }
+  #view-toggle-chk:checked ~ .products-grid .product-card .product-card-image { width: 16rem; min-height: 12rem; flex-shrink: 0; aspect-ratio: auto; }
+  #view-toggle-chk:checked ~ .products-grid .product-card .grid-btn { display: none !important; }
+  #view-toggle-chk:checked ~ .products-grid .product-card .list-btn { display: flex !important; }
+  .products-grid .product-card .list-btn { display: none !important; }
+
+  .view-toggle label { cursor: pointer; display:flex; align-items:center; justify-content:center; padding:0.375rem; border-radius:0.375rem; transition:all 0.15s; }
+
+  #tab-signin-radio, #tab-register-radio { display: none; }
+
+  #tab-signin-radio:checked ~ .login-page .login-tab[for="tab-signin-radio"] { background:#fff; color:#0f172a; box-shadow:0 1px 3px rgba(0,0,0,.1); }
+  #tab-signin-radio:checked ~ .login-page .login-tab[for="tab-register-radio"] { background:none; color:#64748b; box-shadow:none; }
+  #tab-register-radio:checked ~ .login-page .login-tab[for="tab-register-radio"] { background:#fff; color:#0f172a; box-shadow:0 1px 3px rgba(0,0,0,.1); }
+  #tab-register-radio:checked ~ .login-page .login-tab[for="tab-signin-radio"] { background:none; color:#64748b; box-shadow:none; }
+
+  #tab-signin-radio:checked ~ .login-page .name-field { display: none; }
+  #tab-register-radio:checked ~ .login-page .name-field { display: flex; }
+  #tab-signin-radio:checked ~ .login-page .forgot-link { display: block; }
+  #tab-register-radio:checked ~ .login-page .forgot-link { display: none; }
+
+  #tab-signin-radio:checked ~ .login-page .title-signin { display: block; }
+  #tab-signin-radio:checked ~ .login-page .title-register { display: none; }
+  #tab-register-radio:checked ~ .login-page .title-signin { display: none; }
+  #tab-register-radio:checked ~ .login-page .title-register { display: block; }
+
+
+  #tab-signin-radio:checked ~ .login-page .btn-label-signin { display: inline; }
+  #tab-signin-radio:checked ~ .login-page .btn-label-register { display: none; }
+  #tab-register-radio:checked ~ .login-page .btn-label-signin { display: none; }
+  #tab-register-radio:checked ~ .login-page .btn-label-register { display: inline; }
+
+  .login-tab { cursor: pointer; }
+
+  .title-register { display: none; }
+  .title-signin { display: block; }
+  .forgot-link { display: block; }
+
+  #tab-signin-radio:checked ~ .login-page .signin-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  #tab-signin-radio:checked ~ .login-page .register-form { display: none; }
+  #tab-register-radio:checked ~ .login-page .signin-form { display: none; }
+  #tab-register-radio:checked ~ .login-page .register-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .signin-form .name-field { display: none; }
+
+  .signin-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .register-form { display: none; }
+
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-top">
+      <a href="index.html" class="logo">ZZM<span>TRADING</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products, brands, parts..." />
+        <button class="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+      <div class="header-icons">
+        <a href="login.html" class="header-icon-link" style="color:#2563eb;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>Account</span>
+        </a>
+        <a href="login.html" class="header-icon-link">
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span class="cart-badge">3</span>
+          </div>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container navbar-inner">
+        <div class="categories-wrapper">
+          <button class="categories-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            Categories
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="categories-dropdown">
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              Gaming PCs
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+              Laptops
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>
+              Components
+            </a>
+            <a href="products.html" class="category-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+              Accessories
+            </a>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="about.html" class="nav-link">About Us</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <input type="radio" name="login-tab" id="tab-signin-radio" checked>
+    <input type="radio" name="login-tab" id="tab-register-radio">
+    <div class="login-page">
+
+      <div class="login-left">
+        <div class="login-left-bg">
+          <img src="https://images.unsplash.com/photo-1642665358815-310df20dc8dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080&q=80" alt="Minimal Desk Setup" />
+          <div class="login-left-overlay"></div>
+        </div>
+        <div class="login-left-content">
+          <h2>Level up your rig today.</h2>
+          <p>Join the ZZMTRADING community to access exclusive deals, track your orders, and manage your service requests all in one place.</p>
+        </div>
+      </div>
+
+      <div class="login-right">
+        <div class="login-box">
+
+          <div class="login-tabs">
+            <label class="login-tab" for="tab-signin-radio">Sign In</label>
+            <label class="login-tab" for="tab-register-radio">Register</label>
+          </div>
+
+          <div class="login-heading">
+            <h1 class="title-signin">Welcome back</h1>
+            <h1 class="title-register">Create an account</h1>
+            <p class="title-signin">Enter your details to access your account.</p>
+            <p class="title-register">Fill in your information to get started.</p>
+          </div>
+
+          <!-- Demo accounts -->
+          <div class="demo-accounts">
+            <div class="demo-accounts-label">
+              <span class="demo-divider-line"></span>
+              <span class="demo-divider-text">Quick Demo Access</span>
+              <span class="demo-divider-line"></span>
+            </div>
+            <div class="demo-cards">
+              <button type="button" class="demo-card demo-superadmin" onclick="fillDemo('superadmin@zzmtrading.com','superadmin123')">
+                <div class="demo-card-icon">&#11088;</div>
+                <div class="demo-card-info">
+                  <div class="demo-card-role">Super Admin</div>
+                  <div class="demo-card-creds">superadmin@zzmtrading.com</div>
+                </div>
+                <div class="demo-card-arrow">→</div>
+              </button>
+              <button type="button" class="demo-card demo-admin" onclick="fillDemo('admin@zzmtrading.com','admin123')">
+                <div class="demo-card-icon">🛡️</div>
+                <div class="demo-card-info">
+                  <div class="demo-card-role">Admin</div>
+                  <div class="demo-card-creds">admin@zzmtrading.com</div>
+                </div>
+                <div class="demo-card-arrow">→</div>
+              </button>
+              <button type="button" class="demo-card demo-customer" onclick="fillDemo('customer@zzmtrading.com','customer123')">
+                <div class="demo-card-icon">🛒</div>
+                <div class="demo-card-info">
+                  <div class="demo-card-role">Customer</div>
+                  <div class="demo-card-creds">customer@zzmtrading.com</div>
+                </div>
+                <div class="demo-card-arrow">→</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sign-in form -->
+          <form class="form-fields signin-form" onsubmit="handleLogin(event)">
+
+            <div class="form-field">
+              <label for="emailInput">Email Address</label>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <input type="email" id="emailInput" name="email" placeholder="name@example.com" class="form-input" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <div class="field-label-row">
+                <label for="passwordInput">Password</label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+              <div class="input-wrapper">
+                <div class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <input type="password" id="passwordInput" name="password" placeholder="••••••••" class="form-input pr-icon" required />
+              </div>
+            </div>
+
+            <div id="login-error" class="login-error" style="display:none">
+              Invalid email or password. Try a demo account above.
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Sign In
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <script>
+            const DEMO_ACCOUNTS = {
+              'superadmin@zzmtrading.com': { pass: 'superadmin123', dest: 'sa-analytics.html' },
+              'admin@zzmtrading.com':      { pass: 'admin123',      dest: 'admin-analytics.html' },
+              'customer@zzmtrading.com':   { pass: 'customer123',   dest: 'customer-home.html' },
+            };
+
+            function fillDemo(email, pass) {
+              document.getElementById('emailInput').value = email;
+              document.getElementById('passwordInput').value = pass;
+              document.getElementById('login-error').style.display = 'none';
+              // Highlight the active demo card
+              document.querySelectorAll('.demo-card').forEach(c => c.classList.remove('demo-card-active'));
+              event.currentTarget.classList.add('demo-card-active');
+            }
+
+            function handleLogin(e) {
+              e.preventDefault();
+              const email = document.getElementById('emailInput').value.trim().toLowerCase();
+              const pass  = document.getElementById('passwordInput').value;
+              const account = DEMO_ACCOUNTS[email];
+              if (account && account.pass === pass) {
+                window.location.href = account.dest;
+              } else {
+                document.getElementById('login-error').style.display = 'flex';
+              }
+            }
+          </script>
+
+          <!-- Register form -->
+          <form action="index.html" method="get" class="form-fields register-form">
+            <div class="form-field">
+              <label for="regName">Full Name</label>
+              <div class="input-wrapper">
+                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+                <input type="text" id="regName" name="name" placeholder="John Doe" class="form-input" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="regEmail">Email Address</label>
+              <div class="input-wrapper">
+                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                <input type="email" id="regEmail" name="email" placeholder="name@example.com" class="form-input" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="regPassword">Password</label>
+              <div class="input-wrapper">
+                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <input type="password" id="regPassword" name="password" placeholder="••••••••" class="form-input" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="regConfirm">Confirm Password</label>
+              <div class="input-wrapper">
+                <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <input type="password" id="regConfirm" name="confirm" placeholder="••••••••" class="form-input" required />
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">
+              Create Account
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">ZZM<span>TRADING</span></div>
+          <p class="footer-desc">Your ultimate destination for premium gaming gear, performance components, and expert technical support.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">Gaming PCs</a></li>
+            <li><a href="products.html">Laptops</a></li>
+            <li><a href="products.html">Components</a></li>
+            <li><a href="products.html">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Repair Status</a></li>
+            <li><a href="#">Warranty Info</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p class="newsletter-text">Subscribe for the latest drops and deals.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email address" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

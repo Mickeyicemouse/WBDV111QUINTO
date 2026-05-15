@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZZM Trading &mdash; Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    body { display:flex; flex-direction:column; min-height:100vh; }
+
+    .customer-logout-btn {
+      display:flex; align-items:center; gap:0.375rem;
+      padding:0.375rem 0.875rem; border-radius:0.375rem;
+      font-size:0.8125rem; font-weight:500; color:#dc2626;
+      border:1px solid #fca5a5; background:white;
+      transition:background-color 0.15s; text-decoration:none; cursor:pointer;
+    }
+    .customer-logout-btn:hover { background-color:#fef2f2; }
+    .modal-confirm {
+      display:flex; align-items:center; justify-content:center;
+      background:#dc2626; color:#fff; font-weight:700; padding:0.75rem;
+      border-radius:0.75rem; font-size:0.9375rem; text-decoration:none;
+    }
+    .modal-confirm:hover { background:#b91c1c; }
+    .modal-cancel-btn {
+      display:flex; align-items:center; justify-content:center;
+      background:#f1f5f9; color:#334155; font-weight:600; padding:0.75rem;
+      border-radius:0.75rem; font-size:0.9375rem; border:1px solid #e2e8f0; text-decoration:none;
+    }
+    .modal-cancel-btn:hover { background:#e2e8f0; }
+
+    .tab-radio { display:none; }
+    .deals-tab { cursor:pointer; }
+    #tab-all:checked   ~ .tab-labels label[for="tab-all"],
+    #tab-elec:checked  ~ .tab-labels label[for="tab-elec"],
+    #tab-fash:checked  ~ .tab-labels label[for="tab-fash"],
+    #tab-home:checked  ~ .tab-labels label[for="tab-home"] {
+      background:#dc2626; color:white; border-color:#dc2626;
+    }
+    .deal-card { display:block; }
+    #tab-elec:checked ~ .deals-grid .deal-card { display:none; }
+    #tab-elec:checked ~ .deals-grid .deal-card[data-cat="electronics"] { display:block; }
+    #tab-fash:checked ~ .deals-grid .deal-card { display:none; }
+    #tab-fash:checked ~ .deals-grid .deal-card[data-cat="fashion"] { display:block; }
+    #tab-home:checked ~ .deals-grid .deal-card { display:none; }
+    #tab-home:checked ~ .deals-grid .deal-card[data-cat="home"] { display:block; }
+
+    #view-toggle { display:none; }
+    #view-toggle:checked ~ .products-main .products-grid { grid-template-columns:1fr; }
+    #view-toggle:checked ~ .products-main .products-grid .product-card { flex-direction:row; }
+    #view-toggle:checked ~ .products-main .products-grid .product-card-image { width:8rem; flex-shrink:0; aspect-ratio:auto; height:8rem; }
+    .view-lbl { cursor:pointer; }
+    #view-toggle:checked ~ .products-main .view-toggle .view-lbl[for="view-toggle-list"] { background:#fff; box-shadow:0 1px 2px rgb(0 0 0/.05); color:#2563eb; }
+    #view-toggle:checked ~ .products-main .view-toggle .view-lbl[for="view-toggle-grid"] { background:none; box-shadow:none; color:#64748b; }
+
+    .pill-radio { display:none; }
+    .pill-label { cursor:pointer; }
+    #pill-all:checked    ~ .filter-pills .pill-label[for="pill-all"],
+    #pill-active:checked ~ .filter-pills .pill-label[for="pill-active"],
+    #pill-inactive:checked~ .filter-pills .pill-label[for="pill-inactive"],
+    #pill-flagged:checked ~ .filter-pills .pill-label[for="pill-flagged"] {
+      background:#ede9fe; border-color:#7c3aed; color:#6d28d9; font-weight:600;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-top">
+      <a class="logo" href="customer-home.html">ZZM<span>Trading</span></a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products, brands, categories&hellip;">
+        <button class="search-btn" aria-label="Search">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+      <div class="header-icons">
+        <a class="header-icon-link" href="customer-wishlist.html" title="Wishlist">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Wishlist</span>
+        </a>
+        <a class="header-icon-link" style="position:relative" href="customer-home.html" title="Cart">
+          <div class="cart-badge">3</div>
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span>Cart</span>
+        </a>
+        <a class="header-icon-link" href="customer-dashboard.html" title="Account">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Account</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="categories-wrapper">
+          <button class="categories-btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            All Categories
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="categories-dropdown">
+            <a class="category-item" href="customer-products.html"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Electronics</a>
+            <a class="category-item" href="customer-products.html"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>Fashion</a>
+            <a class="category-item" href="customer-products.html"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home &amp; Living</a>
+            <a class="category-item" href="customer-products.html"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sports</a>
+            <a class="category-item" href="customer-products.html"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>Beauty</a>
+          </div>
+        </div>
+        <div class="nav-links"><a class="nav-link active" href="customer-home.html">Home</a>
+          <a class="nav-link" href="customer-products.html">Products</a>
+          <a class="nav-link" href="customer-deals.html">Deals</a>
+          <a class="nav-link" href="customer-wishlist.html">Wishlist</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-subnav">
+    <div class="user-nav-tabs"><a class="user-nav-tab" href="customer-dashboard.html"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a class="user-nav-tab" href="customer-wishlist.html"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Wishlist</a>
+      <a class="user-nav-tab active" href="customer-profile.html"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a>
+      </div>
+    <a class="customer-logout-btn" href="customer-logout.html">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sign Out
+    </a>
+  </div>
+</header>
+<main>
+
+<div class="container">
+  <div class="profile-layout">
+    <div class="profile-sidebar-card">
+      <div class="avatar-area"><div class="avatar">JD</div><div class="avatar-name">Juan Dela Cruz</div><div class="avatar-role">Premium Member since 2023</div></div>
+      <div class="profile-menu">
+        <a class="pm-item active" href="customer-profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Personal Info</a>
+        <a class="pm-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Addresses</a>
+        <a class="pm-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Security</a>
+        <a class="pm-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notifications</a>
+        <a class="pm-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Payment Methods</a>
+        <a class="pm-item" href="customer-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Order History</a>
+      </div>
+    </div>
+    <div class="profile-main-area">
+      <div class="prof-section">
+        <div class="prof-section-title">Personal Information</div>
+        <div class="form-grid">
+          <div class="form-field"><label>First Name</label><input type="text" value="Juan"></div>
+          <div class="form-field"><label>Last Name</label><input type="text" value="Dela Cruz"></div>
+          <div class="form-field"><label>Email Address</label><input type="email" value="juan@email.com"></div>
+          <div class="form-field"><label>Phone Number</label><input type="tel" value="+63 917 123 4567"></div>
+        </div>
+        <div class="form-actions"><button class="btn-save">Save Changes</button><button class="btn-cancel-outline">Cancel</button></div>
+      </div>
+      <div class="prof-section">
+        <div class="prof-section-title">Address</div>
+        <div class="form-grid">
+          <div class="form-field"><label>Street Address</label><input type="text" value="123 Rizal Street"></div>
+          <div class="form-field"><label>City / Municipality</label><input type="text" value="Quezon City"></div>
+          <div class="form-field full"><label>Province / Region</label><input type="text" value="Metro Manila, NCR"></div>
+        </div>
+        <div class="form-actions"><button class="btn-save">Save Changes</button><button class="btn-cancel-outline">Cancel</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ZZM<span>Trading</span></div>
+        <p class="footer-desc">Your trusted online marketplace for premium products. Fast delivery, easy returns, secure payments &mdash; every time.</p>
+      </div>
+      <div class="footer-col"><h4>Shop</h4><ul>
+        <li><a href="customer-products.html">Electronics</a></li>
+        <li><a href="customer-products.html">Fashion</a></li>
+        <li><a href="customer-products.html">Home &amp; Living</a></li>
+        <li><a href="customer-products.html">Sports &amp; Outdoors</a></li>
+        <li><a href="customer-products.html">Beauty &amp; Health</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Account</h4><ul>
+        <li><a href="customer-dashboard.html">Dashboard</a></li>
+        <li><a href="customer-profile.html">My Profile</a></li>
+        <li><a href="customer-wishlist.html">Wishlist</a></li>
+        <li><a href="customer-dashboard.html">Order History</a></li>
+        <li><a href="customer-dashboard.html">Track Order</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Newsletter</h4>
+        <p class="newsletter-text">Get exclusive deals and new product alerts delivered straight to your inbox.</p>
+        <div class="newsletter-form"><input type="email" placeholder="your@email.com"><button>Subscribe</button></div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid #1e293b;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:0.8125rem;color:#475569;">
+      <div>&copy; 2026 ZZM Trading. All rights reserved.</div>
+      <div style="display:flex;gap:1.5rem;"><a href="#" style="color:#475569">Privacy Policy</a><a href="#" style="color:#475569">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

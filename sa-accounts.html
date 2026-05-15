@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Admin – Account Mgmt – ZZMTRADING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pill-radio { display: none; }
+    .pill { cursor: pointer; }
+    .pill-radio:nth-of-type(1):checked ~ .filter-pills .pill:nth-child(1),
+    .pill-radio:nth-of-type(2):checked ~ .filter-pills .pill:nth-child(2),
+    .pill-radio:nth-of-type(3):checked ~ .filter-pills .pill:nth-child(3),
+    .pill-radio:nth-of-type(4):checked ~ .filter-pills .pill:nth-child(4),
+    .pill-radio:nth-of-type(5):checked ~ .filter-pills .pill:nth-child(5) {
+      background: #ede9fe; border-color: #7c3aed; color: #6d28d9; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-wordmark">ZZM<span>TRADING</span></span>
+      <span class="super-badge">&#11088; Super Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="nav-item" href="sa-analytics.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        SA Analytics
+      </a>
+      <a class="nav-item" href="sa-dashboard.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        SA Dashboard
+      </a>
+      <div class="nav-section-label">Management</div>
+      <a class="nav-item active" href="sa-accounts.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        Account Mgmt<span class="nav-badge">12</span>
+      </a>
+      <a class="nav-item" href="sa-sales.html">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4"/><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+        Sales Mgmt<span class="nav-badge">5</span>
+      </a>
+      
+    </nav>
+    <div class="sidebar-footer">
+      <a class="logout-link" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log Out
+      </a>
+    </div>
+  </aside>
+  <div class="admin-main">
+    <div class="topbar">
+      <div class="page-title">Account Management</div>
+      <div class="topbar-right">
+        <div class="topbar-filters">
+          <button class="btn-dark">+ Invite User</button>
+        </div>
+        <button class="btn-dark">Export</button>
+        <div class="admin-profile">
+          <div class="admin-avatar">SA</div>
+          <span class="admin-name">Super Admin</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+
+        <div class="mgmt-stats-grid">
+          <div class="mgmt-stat-card accent-purple"><div class="mgmt-stat-label">Total Accounts</div><div class="mgmt-stat-val">18,554</div><div class="mgmt-stat-sub">All registered users</div></div>
+          <div class="mgmt-stat-card"><div class="mgmt-stat-label">Pending Approval</div><div class="mgmt-stat-val">12</div><div class="mgmt-stat-sub">Awaiting review</div></div>
+          <div class="mgmt-stat-card"><div class="mgmt-stat-label">Banned Accounts</div><div class="mgmt-stat-val">34</div><div class="mgmt-stat-sub">Flagged or suspended</div></div>
+        </div>
+
+        <div class="search-filter-bar">
+          <div class="search-input-wrap">
+            <svg class="search-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" class="search-input" placeholder="Search accounts by name, email, role&#8230;" />
+          </div>
+          <input type="radio" name="acc-pill" id="acc-pill-0" class="pill-radio" checked>
+          <input type="radio" name="acc-pill" id="acc-pill-1" class="pill-radio">
+          <input type="radio" name="acc-pill" id="acc-pill-2" class="pill-radio">
+          <input type="radio" name="acc-pill" id="acc-pill-3" class="pill-radio">
+          <input type="radio" name="acc-pill" id="acc-pill-4" class="pill-radio">
+          <div class="filter-pills">
+            <label class="pill active" for="acc-pill-0">All</label>
+            <label class="pill" for="acc-pill-1">Customers</label>
+            <label class="pill" for="acc-pill-2">Sellers</label>
+            <label class="pill" for="acc-pill-3">Admins</label>
+            <label class="pill" for="acc-pill-4">Banned</label>
+            </div>
+          <button class="btn-ghost-sm">Export</button>
+        </div>
+
+        <div class="table-card">
+          <div class="table-card-header"><div class="table-card-title">All Accounts</div><button class="btn-outline-sm">+ Add Account</button></div>
+          <div class="table-wrapper">
+            <table class="admin-table">
+              <thead><tr><th><input type="checkbox"></th><th>User</th><th>Role</th><th>Joined</th><th>Orders</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td><input type="checkbox"></td><td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#fbbf24,#d97706)">JD</div><div><div class="user-name">Juan Dela Cruz</div><div class="user-email">juan@email.com</div></div></div></td><td><span class="role-badge role-customer">Customer</span></td><td style="color:#64748b">Jan 12, 2025</td><td>24</td><td><span class="status-badge status-active">Active</span></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Ban</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">MS</div><div><div class="user-name">Maria Santos</div><div class="user-email">maria@techstore.com</div></div></div></td><td><span class="role-badge role-seller">Seller</span></td><td style="color:#64748b">Mar 5, 2024</td><td>148</td><td><span class="status-badge status-active">Active</span></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Ban</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#6ee7b7,#0d9488)">PR</div><div><div class="user-name">Pedro Reyes</div><div class="user-email">pedro@email.com</div></div></div></td><td><span class="role-badge role-customer">Customer</span></td><td style="color:#64748b">Feb 18, 2025</td><td>7</td><td><span class="status-badge status-inactive">Inactive</span></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Ban</button></div></td></tr>
+                <tr><td><input type="checkbox"></td><td><div class="user-cell"><div class="user-avatar-sm" style="background:linear-gradient(135deg,#fca5a5,#dc2626)">AG</div><div><div class="user-name">Ana Garcia</div><div class="user-email">ana@email.com</div></div></div></td><td><span class="role-badge role-admin">Admin</span></td><td style="color:#64748b">Aug 1, 2023</td><td>&#8212;</td><td><span class="status-badge status-active">Active</span></td><td><div class="action-btns"><button class="act-btn act-view">View</button><button class="act-btn act-edit">Edit</button><button class="act-btn act-delete">Ban</button></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <div class="table-count">Showing 4 of 18,554 accounts</div>
+            <div class="pagination-sm"><button class="pag-btn">&#8249;</button><button class="pag-btn active">1</button><button class="pag-btn">2</button><button class="pag-btn dark">&#8250;</button></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
